@@ -8,9 +8,13 @@ public class PlantaPermanente extends Empleado {
 			return 150 * cantHijos;
 		}
 		
-		public Integer asignacionXConyugue() {
-			if() {
-				
-			}
+		public PlantaPermanente(String nombre, Integer direccion, Boolean casado, Integer fechaNacimiento, Integer sueldoBasico, Integer cantHijos, Integer antiguedad) {
+			super(nombre, direccion, casado, fechaNacimiento, sueldoBasico);
 		}
+//		
+//		public Integer asignacionXConyugue() {
+//			if() {
+//				
+//			}
+//		}
 }

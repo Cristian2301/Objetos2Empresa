@@ -1,5 +1,5 @@
 package empresa;
 
-public class PlantaTemporaria extends Empleado {
-
-}
+//public class PlantaTemporaria extends Empleado {
+//
+//}

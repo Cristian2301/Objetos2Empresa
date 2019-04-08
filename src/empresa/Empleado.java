@@ -1,11 +1,14 @@
 package empresa;
 
-public class Empleado {
-	private String nombre; 
-	private Integer direccion;
-	private Boolean casado;
-	private Integer fechaNacimiento;
-	private Integer sueldoBasico;
+import java.time.LocalDate;
+
+public abstract class Empleado {
+	public String nombre; 
+	public Integer direccion;
+	public Boolean casado;
+	public LocalDate fechaNacimiento;
+	public Integer sueldoBasico;
+//	public <Recibo> reciboDeHaberes;
 	
 	public String getNombre() {
 		return nombre;
@@ -31,11 +34,11 @@ public class Empleado {
 		this.casado = casado;
 	}
 
-	public Integer getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Integer fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
@@ -49,15 +52,21 @@ public class Empleado {
 
 
 	public Integer getEdad() {
-		return 2019 - fechaNacimiento;
+		return LocalDate.now().getYear() - fechaNacimiento.getYear();
 	}
 	
-	public Empleado(String nombre, Integer direccion, Boolean casado, Integer fechaNacimiento, Integer sueldoBasico) {
+	public Empleado(String nombre, Integer direccion, Boolean casado, LocalDate fechaNacimiento, Integer sueldoBasico) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.casado = casado;
 		this.fechaNacimiento = fechaNacimiento;
 		this.sueldoBasico = sueldoBasico;
 	}
+	
+	public abstract Integer sueldoBruto();
+	
+	public abstract Integer retenciones();
+	
+	public abstract Integer sueldoNeto();
 	
 }
